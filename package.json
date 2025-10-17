@@ -15,7 +15,7 @@
       "design-system",
       "tailwind"
     ],
-    "author": "Your Name",
+    "author": "Rob Mohan",
     "license": "MIT",
     "peerDependencies": {
       "react": "^18.0.0",
