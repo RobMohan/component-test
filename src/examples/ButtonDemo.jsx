@@ -17,7 +17,7 @@ export default function ButtonDemo() {
         
         <div className="space-y-12">
           {/* Button Variants */}
-          <section className="border-2 border-dashed border-purple-300 rounded-lg p-6">
+          <section>
             <h2 className="text-3xl font-bold mb-6">Button Variants</h2>
             <div className="flex flex-wrap gap-4 items-center">
               <Button variant="primary">Primary Button</Button>
