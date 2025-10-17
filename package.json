@@ -1,5 +1,5 @@
 {
-    "name": "ai-design-system-buttons",
+    "name": "ai-design-system",
     "version": "1.0.0",
     "description": "A comprehensive button component library with custom design system",
     "main": "src/components/Button.jsx",
