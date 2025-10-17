@@ -15,8 +15,8 @@ A comprehensive, customizable button component built with React and Tailwind CSS
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/yourusername/button-component.git
-cd button-component
+git clone https://github.com/yourusername/component-test.git
+cd component-test
 ```
 
 2. Install dependencies:
