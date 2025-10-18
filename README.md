@@ -1,4 +1,4 @@
-# AI Design System Button Component
+# Button Component
 
 A comprehensive, customizable button component built with React and Tailwind CSS.
 
