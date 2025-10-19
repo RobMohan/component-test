@@ -2,8 +2,6 @@
 
 A comprehensive, customizable component library built with React and Tailwind CSS, featuring buttons, cards, and stat cards with a custom color palette.
 
-![Design System Preview](https://via.placeholder.com/1200x600?text=Add+Screenshot+Here)
-
 ## 🚀 Live Demo
 
 **[View Live Demo](https://component-test-ashy.vercel.app/)** | **[GitHub Repository](https://github.com/RobMohan/component-test)**
