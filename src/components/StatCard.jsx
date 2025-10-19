@@ -11,7 +11,7 @@ const StatCard = ({
   className = '' 
 }) => {
   const trendColors = {
-    positive: 'text-secondary',
+    positive: 'text-green-600',
     neutral: 'text-gray-500',
     negative: 'text-destructive'
   };

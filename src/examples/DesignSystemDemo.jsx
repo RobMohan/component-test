@@ -134,7 +134,7 @@ export default function DesignSystemDemo() {
 
           {/* Button Variants */}
           <section id="button-variants" className="mb-16 scroll-mt-8">
-            <div className="border-2 border-dashed border-purple-300 rounded-lg p-6 bg-white">
+            <div>
               <h2 className="text-3xl font-bold mb-6">Button Variants</h2>
               <div className="flex flex-wrap gap-4 items-center">
                 <Button variant="primary">Primary Button</Button>
