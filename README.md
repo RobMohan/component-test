@@ -280,8 +280,8 @@ MIT License - feel free to use this in your own projects!
 ## 👤 Author
 
 **Your Name**
-- Portfolio: [robertmohandesign.com](#)
-- LinkedIn: [linkedin.com/in/robmohan](#)
+- Portfolio: [robertmohandesign.com](https://robertmohandesign.com/)
+- LinkedIn: [linkedin.com/in/robmohan](https://www.linkedin.com/in/robmohan/)
 - GitHub: [@RobMohan](https://github.com/RobMohan)
 
 ---
