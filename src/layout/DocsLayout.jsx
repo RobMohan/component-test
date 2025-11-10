@@ -58,7 +58,7 @@ export default function DocsLayout({ children }) {
               <span>→</span>
             </a>
             <a 
-              href="https://www.linkedin.com/in/robertmohan" 
+              href="https://www.linkedin.com/in/robmohan" 
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 px-4 transition-colors"
