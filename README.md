@@ -1,10 +1,12 @@
 # AI Design System
 
-A comprehensive, customizable component library built with React and Tailwind CSS, featuring buttons, cards, and stat cards with a custom color palette.
+A comprehensive, customizable component library built with React and Tailwind CSS, featuring buttons, cards, and stat cards with a custom color palette. This project explores how AI can accelerate design system workflows and improve design-to-development collaboration.
+
+![Design System Preview](https://via.placeholder.com/1200x600?text=Add+Screenshot+Here)
 
 ## 🚀 Live Demo
 
-**[View Live Demo](https://component-test-ashy.vercel.app/)** | **[GitHub Repository](https://github.com/RobMohan/component-test)**
+**[View Live Demo](https://component-test-ashy.vercel.app)** | **[GitHub Repository](https://github.com/RobMohan/component-test)**
 
 ## ✨ Features
 
@@ -12,7 +14,10 @@ A comprehensive, customizable component library built with React and Tailwind CS
 - 🔘 **Button Component** - 6 variants, 4 sizes, icon support, and all interactive states
 - 📇 **Card Component** - Flexible content cards with optional headers and footers
 - 📊 **Stat Card Component** - Dashboard-style metric cards with trend indicators
-- 🧭 **Interactive Navigation** - Sidebar navigation for easy component browsing
+- 📚 **Interactive Documentation** - Separate pages for each component with live examples
+- 🧭 **React Router Navigation** - Easy navigation between component pages
+- 📋 **Props Tables** - Complete documentation for every prop
+- 💻 **Code Examples** - Copy-paste ready code snippets for each component
 - ♿ **Accessible** - Proper focus states, keyboard navigation, and semantic HTML
 - 🧪 **Tested** - Comprehensive unit tests with Vitest
 - 📱 **Responsive** - Works beautifully on all screen sizes
@@ -20,7 +25,7 @@ A comprehensive, customizable component library built with React and Tailwind CS
 ## 📦 Installation
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/component-test.git
+git clone https://github.com/RobMohan/component-test.git
 cd component-test
 
 # Install dependencies
@@ -42,134 +47,38 @@ npm test
 
 A versatile button component with multiple variants, sizes, and states.
 
-#### Usage
-```jsx
-import Button from './components/Button';
-import { Download } from 'lucide-react';
+**Features:**
+- 6 variants: primary, secondary, destructive, outline, ghost, link
+- 4 sizes: small, default, large, icon-only
+- Icon support (left or right positioning)
+- Disabled states
+- Full keyboard accessibility
 
-// Basic button
-<Button variant="primary">Click me</Button>
-
-// Button with icon
-<Button variant="secondary" icon={Download}>
-  Download
-</Button>
-
-// Different sizes
-<Button size="small">Small</Button>
-<Button size="default">Default</Button>
-<Button size="large">Large</Button>
-<Button size="icon" icon={Settings} />
-
-// Disabled state
-<Button disabled>Disabled</Button>
-```
-
-#### Props
-
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `variant` | `'primary' \| 'secondary' \| 'destructive' \| 'outline' \| 'ghost' \| 'link'` | `'primary'` | Visual style variant |
-| `size` | `'small' \| 'default' \| 'large' \| 'icon'` | `'default'` | Button size |
-| `disabled` | `boolean` | `false` | Disabled state |
-| `icon` | `LucideIcon` | `undefined` | Icon from lucide-react |
-| `iconPosition` | `'left' \| 'right'` | `'left'` | Icon position |
-| `onClick` | `function` | `undefined` | Click handler |
-| `className` | `string` | `''` | Additional CSS classes |
-
----
+[View Button Documentation →](https://component-test-ashy.vercel.app/button)
 
 ### Card
 
-A flexible content card component for displaying information with optional headers and footers.
+A flexible content card component for displaying information with optional headers, content, and footers.
 
-#### Usage
-```jsx
-import Card from './components/Card';
-import Button from './components/Button';
+**Features:**
+- Optional title and description
+- Custom content area
+- Optional footer (perfect for action buttons)
+- Clean, minimal design
 
-// Simple card
-<Card
-  title="Card Title"
-  description="Card description goes here"
-/>
-
-// Card with content
-<Card
-  title="Card with Content"
-  description="This card has additional content"
->
-  <p>Your custom content here</p>
-</Card>
-
-// Card with footer actions
-<Card
-  title="Complete Card"
-  description="Card with all sections"
-  footer={
-    <div className="flex gap-3">
-      <Button variant="primary">Save</Button>
-      <Button variant="outline">Cancel</Button>
-    </div>
-  }
->
-  <p>Card content here</p>
-</Card>
-```
-
-#### Props
-
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `title` | `string` | `undefined` | Card title |
-| `description` | `string` | `undefined` | Card description |
-| `children` | `ReactNode` | `undefined` | Card content |
-| `footer` | `ReactNode` | `undefined` | Footer content (typically buttons) |
-| `className` | `string` | `''` | Additional CSS classes |
-
----
+[View Card Documentation →](https://component-test-ashy.vercel.app/card)
 
 ### StatCard
 
-Dashboard-style metric cards for displaying statistics and trends.
+Dashboard-style metric cards for displaying statistics with trend indicators.
 
-#### Usage
-```jsx
-import StatCard from './components/StatCard';
-import { DollarSign } from 'lucide-react';
+**Features:**
+- Large value display
+- Icon support
+- Trend indicators with color coding (positive/neutral/negative)
+- Perfect for dashboards and analytics
 
-// Stat card with positive trend
-<StatCard
-  value="$12,234"
-  label="Total Revenue"
-  icon={DollarSign}
-  trend="+20.1% from last month"
-  trendType="positive"
-/>
-
-// Stat card with label only
-<StatCard
-  value="4.9"
-  label="Average Rating"
-  icon={Star}
-  trendLabel="Based on 1,234 reviews"
-  trendType="neutral"
-/>
-```
-
-#### Props
-
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `value` | `string \| number` | required | Main metric value |
-| `label` | `string` | required | Metric label |
-| `icon` | `LucideIcon` | `undefined` | Icon from lucide-react |
-| `trend` | `string` | `undefined` | Trend indicator (with percentage) |
-| `trendLabel` | `string` | `undefined` | Alternative to trend (no icon) |
-| `trendType` | `'positive' \| 'neutral' \| 'negative'` | `'positive'` | Trend color styling |
-| `className` | `string` | `''` | Additional CSS classes |
-
----
+[View StatCard Documentation →](https://component-test-ashy.vercel.app/stat-card)
 
 ## 🎨 Color Palette
 ```javascript
@@ -196,13 +105,18 @@ colors: {
 ```
 component-test/
 ├── src/
-│   ├── components/
+│   ├── components/           # Reusable components
 │   │   ├── Button.jsx
 │   │   ├── Button.test.jsx
 │   │   ├── Card.jsx
 │   │   └── StatCard.jsx
-│   ├── examples/
-│   │   └── DesignSystemDemo.jsx
+│   ├── pages/               # Documentation pages
+│   │   ├── HomePage.jsx
+│   │   ├── ButtonPage.jsx
+│   │   ├── CardPage.jsx
+│   │   └── StatCardPage.jsx
+│   ├── layout/              # Shared layout
+│   │   └── DocsLayout.jsx
 │   ├── styles/
 │   │   └── global.css
 │   ├── test/
@@ -239,6 +153,7 @@ Current test coverage:
 ## 🛠️ Built With
 
 - **Framework:** React 18 + Vite
+- **Routing:** React Router DOM
 - **Styling:** Tailwind CSS
 - **Icons:** Lucide React
 - **Testing:** Vitest + React Testing Library
@@ -255,17 +170,17 @@ npm run build
 # Deploy the dist/ folder to your hosting provider
 ```
 
-## 💡 Usage in Your Projects
+## 💡 About This Project
 
-### Install as a Package
-```bash
-npm install your-design-system
-```
+This is a test project created to explore how AI can be leveraged to speed up design system workflows and improve collaboration between designers and developers. Through this experiment, I'm learning how AI tools can help:
 
-### Import Components
-```jsx
-import { Button, Card, StatCard } from 'your-design-system';
-```
+- Translate design concepts into production-ready components
+- Generate comprehensive documentation
+- Maintain consistency across a component library
+- Create unit tests for reliability
+- Build interactive documentation sites
+
+The goal is to understand the practical applications of AI in design systems work—from initial component creation to testing and documentation—and to identify where AI assistance adds the most value in the design-to-development pipeline.
 
 ## 🤝 Contributing
 
@@ -277,12 +192,11 @@ MIT License - feel free to use this in your own projects!
 
 ## 👤 Author
 
-**Your Name**
-- Portfolio: [robertmohandesign.com](https://robertmohandesign.com/)
-- LinkedIn: [linkedin.com/in/robmohan](https://www.linkedin.com/in/robmohan/)
+**Rob Mohan**
+- Email: [rob@robertmohandesign.com](mailto:rob@robertmohandesign.com)
+- LinkedIn: [linkedin.com/in/robertmohan](https://www.linkedin.com/in/robertmohan)
 - GitHub: [@RobMohan](https://github.com/RobMohan)
-
----
+- Portfolio: [robertmohandesign.com](https://robertmohandesign.com)
 
 ## 🎯 Roadmap
 
@@ -294,7 +208,9 @@ Future components planned:
 - [ ] Navigation components
 - [ ] Form components
 - [ ] Toast/Notification system
+- [ ] Badge component
+- [ ] Tooltip component
 
 ---
 
-Built with AI assistance as an exploration of design-to-development collaboration. [Read the full story](#) on my blog.
+**Built with AI assistance** as an exploration of design-to-development collaboration.
