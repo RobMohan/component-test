@@ -47,14 +47,30 @@ export default function DocsLayout({ children }) {
             ))}
           </nav>
 
-          <div className="mt-8 pt-8 border-t border-gray-200">
+          <div className="mt-8 pt-8 border-t border-gray-200 space-y-3">
             <a 
               href="https://github.com/RobMohan/component-test" 
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 px-4"
+              className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 px-4 transition-colors"
             >
               <span>GitHub</span>
+              <span>→</span>
+            </a>
+            <a 
+              href="https://www.linkedin.com/in/robertmohan" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 px-4 transition-colors"
+            >
+              <span>LinkedIn</span>
+              <span>→</span>
+            </a>
+            <a 
+              href="mailto:rob@robertmohandesign.com"
+              className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 px-4 transition-colors"
+            >
+              <span>Email</span>
               <span>→</span>
             </a>
           </div>
