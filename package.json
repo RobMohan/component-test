@@ -39,6 +39,7 @@
         "vitest": "^3.2.4"
     },
     "dependencies": {
-        "lucide-react": "^0.263.1"
+        "lucide-react": "^0.263.1",
+        "react-router-dom": "^7.9.5"
     }
 }
