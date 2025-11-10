@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import Logo from '../components/Logo';
 
 export default function DocsLayout({ children }) {
   const location = useLocation();
@@ -47,13 +46,16 @@ export default function DocsLayout({ children }) {
         } ${isOpen ? 'w-64' : 'lg:w-20'}`}
       >
         <div className="p-6">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 mb-8">
-            <Logo size={isOpen ? 'default' : 'small'} />
-            {isOpen && (
+          {/* Title */}
+          <Link to="/" className="block mb-8">
+            {isOpen ? (
               <div>
-                <h1 className="text-xl font-bold">AI Design System</h1>
-                <p className="text-xs text-gray-600">Component Docs</p>
+                <h1 className="text-2xl font-bold mb-1">AI Design System</h1>
+                <p className="text-sm text-gray-600">Component Documentation</p>
+              </div>
+            ) : (
+              <div className="text-center">
+                <h1 className="text-xl font-bold">AI</h1>
               </div>
             )}
           </Link>
