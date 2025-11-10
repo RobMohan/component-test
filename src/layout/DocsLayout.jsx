@@ -5,10 +5,10 @@ export default function DocsLayout({ children }) {
   const location = useLocation();
   
   const navItems = [
-    { path: '/', label: 'Home', icon: '🏠' },
-    { path: '/button', label: 'Button', icon: '🔘' },
-    { path: '/card', label: 'Card', icon: '📇' },
-    { path: '/stat-card', label: 'Stat Card', icon: '📊' },
+    { path: '/', label: 'Home' },
+    { path: '/button', label: 'Button' },
+    { path: '/card', label: 'Card' },
+    { path: '/stat-card', label: 'Stat Card' },
   ];
   
   const isActive = (path) => {
@@ -36,13 +36,12 @@ export default function DocsLayout({ children }) {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`flex items-center gap-3 w-full text-left px-4 py-2.5 rounded-lg transition-colors ${
+                className={`block w-full text-left px-4 py-2.5 rounded-lg transition-colors ${
                   isActive(item.path)
                     ? 'bg-primary text-white'
                     : 'text-gray-700 hover:bg-gray-100'
                 }`}
               >
-                <span className="text-lg">{item.icon}</span>
                 <span className="font-medium">{item.label}</span>
               </Link>
             ))}

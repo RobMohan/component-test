@@ -17,13 +17,39 @@ export default function HomePage() {
             featuring buttons, cards, and stat cards with a custom color palette.
           </p>
           <div className="flex gap-4 justify-center">
-            <Button variant="primary" size="large">
-              Get Started
-            </Button>
-            <Button variant="outline" size="large">
-              View on GitHub
-            </Button>
+            <Link to="/button">
+              <Button variant="primary" size="large">
+                Get Started
+              </Button>
+            </Link>
+            <a href="https://github.com/RobMohan/component-test" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="large">
+                View on GitHub
+              </Button>
+            </a>
           </div>
+        </div>
+
+        {/* About This Project */}
+        <div className="mb-16">
+          <Card
+            title="About This Project"
+            description="An exploration of AI-assisted design system development"
+          >
+            <div className="space-y-4 text-gray-700">
+              <p>
+                This is a test project created to explore how AI can be leveraged to speed up design system workflows 
+                and improve collaboration between designers and developers. Through this experiment, I'm learning how 
+                AI tools can help translate design concepts into production-ready components, generate comprehensive 
+                documentation, and maintain consistency across a component library.
+              </p>
+              <p>
+                The goal is to understand the practical applications of AI in design systems work—from initial component 
+                creation to testing and documentation—and to identify where AI assistance adds the most value in the 
+                design-to-development pipeline.
+              </p>
+            </div>
+          </Card>
         </div>
 
         {/* Features Grid */}
@@ -46,72 +72,63 @@ export default function HomePage() {
         <div className="mb-16">
           <h2 className="text-4xl font-bold mb-8">Components</h2>
           <div className="space-y-6">
-            <Link to="/button">
-              <Card
-                title="Button"
-                description="6 variants, 4 sizes, icon support, and comprehensive states"
-                footer={
-                  <div className="flex items-center gap-2 text-primary font-medium">
-                    View Documentation <ArrowRight size={18} />
-                  </div>
-                }
-                className="hover:shadow-lg transition-shadow cursor-pointer"
-              >
-                <div className="flex gap-3 flex-wrap">
-                  <Button variant="primary" size="small">Primary</Button>
-                  <Button variant="secondary" size="small">Secondary</Button>
-                  <Button variant="destructive" size="small">Destructive</Button>
-                  <Button variant="outline" size="small">Outline</Button>
-                </div>
-              </Card>
-            </Link>
+            <Card
+              title="Button"
+              description="6 variants, 4 sizes, icon support, and comprehensive states"
+              footer={
+                <Link to="/button" className="flex items-center gap-2 text-primary font-medium hover:underline">
+                  View Documentation <ArrowRight size={18} />
+                </Link>
+              }
+            >
+              <div className="flex gap-3 flex-wrap">
+                <Button variant="primary" size="small">Primary</Button>
+                <Button variant="secondary" size="small">Secondary</Button>
+                <Button variant="destructive" size="small">Destructive</Button>
+                <Button variant="outline" size="small">Outline</Button>
+              </div>
+            </Card>
 
-            <Link to="/card">
-              <Card
-                title="Card"
-                description="Flexible content cards with optional headers, content, and footers"
-                footer={
-                  <div className="flex items-center gap-2 text-primary font-medium">
-                    View Documentation <ArrowRight size={18} />
-                  </div>
-                }
-                className="hover:shadow-lg transition-shadow cursor-pointer"
-              >
-                <p className="text-sm text-gray-600">
-                  Perfect for displaying content with consistent spacing and styling
-                </p>
-              </Card>
-            </Link>
+            <Card
+              title="Card"
+              description="Flexible content cards with optional headers, content, and footers"
+              footer={
+                <Link to="/card" className="flex items-center gap-2 text-primary font-medium hover:underline">
+                  View Documentation <ArrowRight size={18} />
+                </Link>
+              }
+            >
+              <p className="text-sm text-gray-600">
+                Perfect for displaying content with consistent spacing and styling
+              </p>
+            </Card>
 
-            <Link to="/stat-card">
-              <Card
-                title="Stat Card"
-                description="Dashboard-style metric cards with trend indicators"
-                footer={
-                  <div className="flex items-center gap-2 text-primary font-medium">
-                    View Documentation <ArrowRight size={18} />
-                  </div>
-                }
-                className="hover:shadow-lg transition-shadow cursor-pointer"
-              >
-                <div className="grid grid-cols-2 gap-4">
-                  <StatCard
-                    value="$12K"
-                    label="Revenue"
-                    icon={DollarSign}
-                    trend="+20%"
-                    trendType="positive"
-                  />
-                  <StatCard
-                    value="2.3K"
-                    label="Users"
-                    icon={DollarSign}
-                    trend="+180%"
-                    trendType="positive"
-                  />
-                </div>
-              </Card>
-            </Link>
+            <Card
+              title="Stat Card"
+              description="Dashboard-style metric cards with trend indicators"
+              footer={
+                <Link to="/stat-card" className="flex items-center gap-2 text-primary font-medium hover:underline">
+                  View Documentation <ArrowRight size={18} />
+                </Link>
+              }
+            >
+              <div className="grid grid-cols-2 gap-4">
+                <StatCard
+                  value="$12K"
+                  label="Revenue"
+                  icon={DollarSign}
+                  trend="+20%"
+                  trendType="positive"
+                />
+                <StatCard
+                  value="2.3K"
+                  label="Users"
+                  icon={DollarSign}
+                  trend="+180%"
+                  trendType="positive"
+                />
+              </div>
+            </Card>
           </div>
         </div>
 
@@ -141,6 +158,7 @@ export default function HomePage() {
         <Card
           title="Quick Start"
           description="Get started with the AI Design System in minutes"
+          className="mb-16"
         >
           <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-sm">
 {`# Clone the repository
@@ -152,6 +170,35 @@ npm install
 # Run development server
 npm run dev`}
           </pre>
+        </Card>
+
+        {/* Contact Section */}
+        <Card
+          title="Get in Touch"
+          description="Questions or want to connect?"
+        >
+          <div className="space-y-4">
+            <div className="flex items-center gap-3">
+              <span className="font-semibold text-gray-700">Email:</span>
+              <a 
+                href="mailto:rob@robertmohandesign.com" 
+                className="text-primary hover:underline"
+              >
+                rob@robertmohandesign.com
+              </a>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="font-semibold text-gray-700">LinkedIn:</span>
+              <a 
+                href="https://www.linkedin.com/in/robertmohan" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                linkedin.com/in/robertmohan
+              </a>
+            </div>
+          </div>
         </Card>
       </div>
     </div>
