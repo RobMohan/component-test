@@ -22,14 +22,16 @@ export default function DocsLayout({ children }) {
   
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Toggle Button */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="fixed top-4 left-4 z-50 p-2 bg-white rounded-lg shadow-md hover:bg-gray-50 transition-colors lg:hidden"
-        aria-label="Toggle menu"
-      >
-        {isOpen ? <X size={24} /> : <Menu size={24} />}
-      </button>
+      {/* Hamburger Button - Shows when sidebar is closed */}
+      {!isOpen && (
+        <button
+          onClick={() => setIsOpen(true)}
+          className="fixed top-4 left-4 z-50 p-2 bg-white rounded-lg shadow-md hover:bg-gray-50 transition-colors"
+          aria-label="Open menu"
+        >
+          <Menu size={24} />
+        </button>
+      )}
 
       {/* Sidebar Overlay for mobile */}
       {isOpen && (
@@ -41,93 +43,80 @@ export default function DocsLayout({ children }) {
 
       {/* Left Sidebar Navigation */}
       <div 
-        className={`fixed left-0 top-0 h-full bg-white border-r border-gray-200 overflow-y-auto z-40 transition-transform duration-300 ${
-          isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
-        } ${isOpen ? 'w-64' : 'lg:w-20'}`}
+        className={`fixed left-0 top-0 h-full w-64 bg-white border-r border-gray-200 overflow-y-auto z-40 transition-transform duration-300 ${
+          isOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}
       >
         <div className="p-6">
-          {/* Title */}
-          <Link to="/" className="block mb-8">
-            {isOpen ? (
-              <div>
-                <h1 className="text-2xl font-bold mb-1">AI Design System</h1>
-                <p className="text-sm text-gray-600">Component Documentation</p>
-              </div>
-            ) : (
-              <div className="text-center">
-                <h1 className="text-xl font-bold">AI</h1>
-              </div>
-            )}
-          </Link>
-
-          {/* Desktop Toggle Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="hidden lg:flex items-center justify-center w-full p-2 mb-4 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors"
-            aria-label="Toggle sidebar"
-          >
-            {isOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
+          {/* Header with Close Button */}
+          <div className="flex items-start justify-between mb-8">
+            <Link to="/" className="flex-1" onClick={() => window.innerWidth < 1024 && setIsOpen(false)}>
+              <h1 className="text-2xl font-bold mb-1">AI Design System</h1>
+              <p className="text-sm text-gray-600">Component Documentation</p>
+            </Link>
+            
+            {/* Close Button - Top right of panel */}
+            <button
+              onClick={() => setIsOpen(false)}
+              className="p-1 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors"
+              aria-label="Close menu"
+            >
+              <X size={20} />
+            </button>
+          </div>
           
           <nav className="space-y-1">
-            {isOpen && (
-              <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2 px-4">
-                Components
-              </div>
-            )}
+            <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2 px-4">
+              Components
+            </div>
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
                 onClick={() => window.innerWidth < 1024 && setIsOpen(false)}
-                className={`flex items-center ${isOpen ? 'justify-start' : 'justify-center'} w-full px-4 py-2.5 rounded-lg transition-colors ${
+                className={`flex items-center justify-start w-full px-4 py-2.5 rounded-lg transition-colors ${
                   isActive(item.path)
                     ? 'bg-primary text-white'
                     : 'text-gray-700 hover:bg-gray-100'
                 }`}
-                title={!isOpen ? item.label : undefined}
               >
-                <span className={`font-medium ${isOpen ? '' : 'text-sm'}`}>
-                  {isOpen ? item.label : item.label.charAt(0)}
-                </span>
+                <span className="font-medium">{item.label}</span>
               </Link>
             ))}
           </nav>
 
-          {isOpen && (
-            <div className="mt-8 pt-8 border-t border-gray-200 space-y-3">
-              <a 
-                href="https://github.com/RobMohan/component-test" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 px-4 transition-colors"
-              >
-                <span>GitHub</span>
-                <span>→</span>
-              </a>
-              <a 
-                href="https://www.linkedin.com/in/robertmohan" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 px-4 transition-colors"
-              >
-                <span>LinkedIn</span>
-                <span>→</span>
-              </a>
-              <a 
-                href="mailto:rob@robertmohandesign.com"
-                className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 px-4 transition-colors"
-              >
-                <span>Email</span>
-                <span>→</span>
-              </a>
-            </div>
-          )}
+          <div className="mt-8 pt-8 border-t border-gray-200 space-y-3">
+            <a 
+              href="https://github.com/RobMohan/component-test" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 px-4 transition-colors"
+            >
+              <span>GitHub</span>
+              <span>→</span>
+            </a>
+            <a 
+              href="https://www.linkedin.com/in/robertmohan" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 px-4 transition-colors"
+            >
+              <span>LinkedIn</span>
+              <span>→</span>
+            </a>
+            <a 
+              href="mailto:rob@robertmohandesign.com"
+              className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 px-4 transition-colors"
+            >
+              <span>Email</span>
+              <span>→</span>
+            </a>
+          </div>
         </div>
       </div>
 
       {/* Main Content Area */}
-      <div className={`transition-all duration-300 ${isOpen ? 'lg:ml-64' : 'lg:ml-20'} ml-0`}>
+      <div className={`transition-all duration-300 ${isOpen ? 'ml-64' : 'ml-0'}`}>
         {children}
       </div>
     </div>
