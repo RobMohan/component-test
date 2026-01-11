@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage';
 import ButtonPage from './pages/ButtonPage';
 import CardPage from './pages/CardPage';
 import StatCardPage from './pages/StatCardPage';
+import BadgePage from './pages/BadgePage';
 import './styles/global.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -17,6 +18,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/button" element={<ButtonPage />} />
           <Route path="/card" element={<CardPage />} />
           <Route path="/stat-card" element={<StatCardPage />} />
+          <Route path="/badge" element={<BadgePage />} />
         </Routes>
       </DocsLayout>
     </BrowserRouter>

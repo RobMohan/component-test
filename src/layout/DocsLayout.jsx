@@ -8,6 +8,7 @@ export default function DocsLayout({ children }) {
   
   const navItems = [
     { path: '/', label: 'Home' },
+    { path: '/badge', label: 'Badge' },
     { path: '/button', label: 'Button' },
     { path: '/card', label: 'Card' },
     { path: '/stat-card', label: 'Stat Card' },
