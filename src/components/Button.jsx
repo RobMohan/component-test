@@ -14,12 +14,13 @@ const Button = ({
   const baseStyles = 'font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 inline-flex items-center justify-center gap-2 disabled:cursor-not-allowed';
   
   const variants = {
-    primary: 'bg-primary hover:bg-primary-hover text-white focus:ring-purple-400 disabled:bg-primary-disabled',
-    secondary: 'bg-secondary hover:bg-secondary-hover text-black focus:ring-lime-400 disabled:bg-secondary-disabled',
-    destructive: 'bg-destructive hover:bg-destructive-hover text-white focus:ring-red-400 disabled:bg-destructive-disabled',
+    primary: 'bg-primary hover:bg-primary-hover active:bg-primary-pressed text-white focus:ring-blue-400 disabled:bg-primary-disabled',
+    secondary: 'bg-secondary hover:bg-secondary-hover active:bg-secondary-pressed text-white focus:ring-purple-400 disabled:bg-secondary-disabled',
+    destructive: 'bg-destructive hover:bg-destructive-hover active:bg-destructive-pressed text-white focus:ring-red-400 disabled:bg-destructive-disabled',
+    positive: 'bg-positive hover:bg-positive-hover active:bg-positive-pressed text-white focus:ring-green-400 disabled:bg-positive-disabled',
     outline: 'bg-white border-2 border-gray-300 hover:bg-gray-50 text-black focus:ring-gray-300 disabled:bg-gray-100 disabled:text-gray-400',
     ghost: 'bg-transparent hover:bg-gray-100 text-black focus:ring-gray-300 disabled:text-gray-400',
-    link: 'bg-transparent hover:underline text-primary focus:ring-purple-300 disabled:text-primary-disabled'
+    link: 'bg-transparent hover:underline text-primary focus:ring-blue-300 disabled:text-primary-disabled'
   };
   
   const sizes = {

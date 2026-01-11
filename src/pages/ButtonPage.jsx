@@ -23,7 +23,7 @@ const PropsTable = () => (
         <tr className="border-b border-gray-100">
           <td className="py-3 px-4 font-mono text-sm">variant</td>
           <td className="py-3 px-4 font-mono text-xs text-gray-600">
-            'primary' | 'secondary' | 'destructive' | 'outline' | 'ghost' | 'link'
+            'primary' | 'secondary' | 'destructive' | 'positive' | 'outline' | 'ghost' | 'link'
           </td>
           <td className="py-3 px-4 font-mono text-xs">'primary'</td>
           <td className="py-3 px-4">Visual style variant</td>
@@ -95,13 +95,14 @@ export default function ButtonPage() {
         <section className="mb-12">
           <h2 className="text-2xl font-bold mb-4">Variants</h2>
           <p className="text-gray-600 mb-6">
-            The Button component comes in 6 different visual styles to fit various use cases.
+            The Button component comes in 7 different visual styles to fit various use cases.
           </p>
           <div className="bg-white rounded-lg border border-gray-200 p-8 mb-4">
             <div className="flex flex-wrap gap-4">
               <Button variant="primary">Primary</Button>
               <Button variant="secondary">Secondary</Button>
               <Button variant="destructive">Destructive</Button>
+              <Button variant="positive">Positive</Button>
               <Button variant="outline">Outline</Button>
               <Button variant="ghost">Ghost</Button>
               <Button variant="link">Link</Button>
@@ -110,6 +111,7 @@ export default function ButtonPage() {
           <CodeBlock code={`<Button variant="primary">Primary</Button>
 <Button variant="secondary">Secondary</Button>
 <Button variant="destructive">Destructive</Button>
+<Button variant="positive">Positive</Button>
 <Button variant="outline">Outline</Button>
 <Button variant="ghost">Ghost</Button>
 <Button variant="link">Link</Button>`} />
