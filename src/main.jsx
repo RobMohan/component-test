@@ -12,6 +12,7 @@ import TypographyPage from './pages/TypographyPage';
 import CheckboxPage from './pages/CheckboxPage';
 import RadioPage from './pages/RadioPage';
 import TogglePage from './pages/TogglePage';
+import TabsPage from './pages/TabsPage';
 import './styles/global.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -28,6 +29,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/stat-card" element={<StatCardPage />} />
           <Route path="/checkbox" element={<CheckboxPage />} />
           <Route path="/radio" element={<RadioPage />} />
+          <Route path="/tabs" element={<TabsPage />} />
           <Route path="/toggle" element={<TogglePage />} />
         </Routes>
       </DocsLayout>
