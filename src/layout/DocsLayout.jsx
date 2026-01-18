@@ -6,8 +6,12 @@ export default function DocsLayout({ children }) {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(true);
   
-  const navItems = [
-    { path: '/', label: 'Home' },
+  const foundationItems = [
+    { path: '/color-tokens', label: 'Color Tokens' },
+    { path: '/typography', label: 'Typography' },
+  ];
+
+  const componentItems = [
     { path: '/badge', label: 'Badge' },
     { path: '/button', label: 'Button' },
     { path: '/card', label: 'Card' },
@@ -66,24 +70,63 @@ export default function DocsLayout({ children }) {
             </button>
           </div>
           
-          <nav className="space-y-1">
-            <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2 px-4">
-              Components
-            </div>
-            {navItems.map((item) => (
+          <nav className="space-y-6">
+            <div>
+              <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2 px-4">
+                Getting Started
+              </div>
               <Link
-                key={item.path}
-                to={item.path}
+                to="/"
                 onClick={() => window.innerWidth < 1024 && setIsOpen(false)}
                 className={`flex items-center justify-start w-full px-4 py-2.5 rounded-lg transition-colors ${
-                  isActive(item.path)
+                  isActive('/')
                     ? 'bg-primary text-white'
                     : 'text-gray-700 hover:bg-gray-100'
                 }`}
               >
-                <span className="font-medium">{item.label}</span>
+                <span className="font-medium">Home</span>
               </Link>
-            ))}
+            </div>
+
+            <div>
+              <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2 px-4">
+                Design Foundations
+              </div>
+              {foundationItems.map((item) => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  onClick={() => window.innerWidth < 1024 && setIsOpen(false)}
+                  className={`flex items-center justify-start w-full px-4 py-2.5 rounded-lg transition-colors ${
+                    isActive(item.path)
+                      ? 'bg-primary text-white'
+                      : 'text-gray-700 hover:bg-gray-100'
+                  }`}
+                >
+                  <span className="font-medium">{item.label}</span>
+                </Link>
+              ))}
+            </div>
+
+            <div>
+              <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2 px-4">
+                Components
+              </div>
+              {componentItems.map((item) => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  onClick={() => window.innerWidth < 1024 && setIsOpen(false)}
+                  className={`flex items-center justify-start w-full px-4 py-2.5 rounded-lg transition-colors ${
+                    isActive(item.path)
+                      ? 'bg-primary text-white'
+                      : 'text-gray-700 hover:bg-gray-100'
+                  }`}
+                >
+                  <span className="font-medium">{item.label}</span>
+                </Link>
+              ))}
+            </div>
           </nav>
 
           <div className="mt-8 pt-8 border-t border-gray-200 space-y-3">

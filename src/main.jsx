@@ -7,6 +7,8 @@ import ButtonPage from './pages/ButtonPage';
 import CardPage from './pages/CardPage';
 import StatCardPage from './pages/StatCardPage';
 import BadgePage from './pages/BadgePage';
+import ColorTokensPage from './pages/ColorTokensPage';
+import TypographyPage from './pages/TypographyPage';
 import './styles/global.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -15,10 +17,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <DocsLayout>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/color-tokens" element={<ColorTokensPage />} />
+          <Route path="/typography" element={<TypographyPage />} />
+          <Route path="/badge" element={<BadgePage />} />
           <Route path="/button" element={<ButtonPage />} />
           <Route path="/card" element={<CardPage />} />
           <Route path="/stat-card" element={<StatCardPage />} />
-          <Route path="/badge" element={<BadgePage />} />
         </Routes>
       </DocsLayout>
     </BrowserRouter>
