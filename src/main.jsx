@@ -13,6 +13,7 @@ import CheckboxPage from './pages/CheckboxPage';
 import RadioPage from './pages/RadioPage';
 import TogglePage from './pages/TogglePage';
 import TabsPage from './pages/TabsPage';
+import TooltipPage from './pages/TooltipPage';
 import './styles/global.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -31,6 +32,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/radio" element={<RadioPage />} />
           <Route path="/tabs" element={<TabsPage />} />
           <Route path="/toggle" element={<TogglePage />} />
+          <Route path="/tooltip" element={<TooltipPage />} />
         </Routes>
       </DocsLayout>
     </BrowserRouter>
