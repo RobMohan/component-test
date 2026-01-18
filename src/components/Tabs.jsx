@@ -17,18 +17,18 @@ const Tabs = ({
 
   return (
     <div className={className}>
-      <div className="flex flex-col border-b border-gray-200">
+      <div className="flex border-b border-black">
         {tabs.map((tab, index) => (
           <button
             key={index}
             onClick={() => handleTabClick(index)}
             className={`
-              px-4 py-3 text-base font-normal text-center transition-all duration-200
-              border-b-2 hover:text-gray-900
+              px-2 py-2 text-base font-normal text-center transition-all duration-200
+              border-b-[3px] border-solid relative
               ${
                 activeTab === index
                   ? 'text-blue-500 border-blue-500'
-                  : 'text-gray-900 border-transparent hover:border-gray-300'
+                  : 'text-gray-900 border-transparent hover:bg-blue-100 hover:rounded-t'
               }
             `}
           >
