@@ -56,7 +56,7 @@ export default function DocsLayout({ children }) {
           {/* Header with Close Button */}
           <div className="flex items-start justify-between mb-8">
             <Link to="/" className="flex-1" onClick={() => window.innerWidth < 1024 && setIsOpen(false)}>
-              <h1 className="text-2xl font-bold mb-1">AI Design System</h1>
+              <h1 className="text-2xl font-bold mb-1">Groove Design System</h1>
               <p className="text-sm text-gray-600">Component Documentation</p>
             </Link>
             

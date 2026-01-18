@@ -1,4 +1,4 @@
-# AI Design System
+# Groove Design System
 
 A comprehensive, customizable component library built with React and Tailwind CSS, featuring buttons, cards, and stat cards with a custom color palette. This project explores how AI can accelerate design system workflows and improve design-to-development collaboration.
 

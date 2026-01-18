@@ -33,7 +33,7 @@ export default function DesignSystemDemo() {
       <div className="fixed left-0 top-0 h-full w-64 bg-white border-r border-gray-200 p-6 overflow-y-auto">
         <div className="mb-8">
           <h1 className="text-2xl font-bold mb-2">Components</h1>
-          <p className="text-sm text-gray-600">AI Design System</p>
+          <p className="text-sm text-gray-600">Groove Design System</p>
         </div>
         
         <nav className="space-y-1">
@@ -58,7 +58,7 @@ export default function DesignSystemDemo() {
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="mb-12">
-            <h1 className="text-5xl font-bold mb-4">AI Design System</h1>
+            <h1 className="text-5xl font-bold mb-4">Groove Design System</h1>
             <p className="text-gray-600 text-lg">
               A comprehensive component library with buttons, cards, and more
             </p>

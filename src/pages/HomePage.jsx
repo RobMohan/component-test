@@ -11,7 +11,7 @@ export default function HomePage() {
       <div className="max-w-5xl mx-auto">
         {/* Hero Section */}
         <div className="mb-16 text-center">
-          <h1 className="text-6xl font-bold mb-6">AI Design System</h1>
+          <h1 className="text-6xl font-bold mb-6">Groove Design System</h1>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             A comprehensive, customizable component library built with React and Tailwind CSS, 
             featuring buttons, cards, and stat cards with a custom color palette.
@@ -157,7 +157,7 @@ export default function HomePage() {
         {/* Quick Start */}
         <Card
           title="Quick Start"
-          description="Get started with the AI Design System in minutes"
+          description="Get started with the Groove Design System in minutes"
           className="mb-16"
         >
           <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-sm">
