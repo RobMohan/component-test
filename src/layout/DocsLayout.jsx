@@ -15,7 +15,10 @@ export default function DocsLayout({ children }) {
     { path: '/badge', label: 'Badge' },
     { path: '/button', label: 'Button' },
     { path: '/card', label: 'Card' },
+    { path: '/checkbox', label: 'Checkbox' },
+    { path: '/radio', label: 'Radio' },
     { path: '/stat-card', label: 'Stat Card' },
+    { path: '/toggle', label: 'Toggle' },
   ];
   
   const isActive = (path) => {
