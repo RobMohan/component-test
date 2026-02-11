@@ -16,6 +16,7 @@ export default function DocsLayout({ children }) {
     { path: '/button', label: 'Button' },
     { path: '/card', label: 'Card' },
     { path: '/checkbox', label: 'Checkbox' },
+    { path: '/data-table', label: 'Data Table' },
     { path: '/radio', label: 'Radio' },
     { path: '/stat-card', label: 'Stat Card' },
     { path: '/tabs', label: 'Tabs' },
